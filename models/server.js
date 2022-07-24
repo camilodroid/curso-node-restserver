@@ -34,7 +34,8 @@ class Server {
     middlewares() {
 
         //CORS
-        this.app.use(cors());
+        this.app.use(cors()); // registringir mi api para que solo ciertas paginas web accedan - 
+        //es una proteccion de cierta manera a mi servidor
 
         // Lectura y pareso del body
         this.app.use(express.json());

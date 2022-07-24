@@ -69,9 +69,9 @@ const usuariosPut = async (req, res = response) => {
     const { id } = req.params;
     const { id_, password, google, correo, ...resto } = req.body;
 
-    // TODO VALIDAR CONTRA BASE DE DATOS
+    // TODO: VALIDAR CONTRA BASE DE DATOS
 
-    if (password) {
+    if (password) { // parece opcional
 
         // Encriptar la contraseña
         const salt = bcryptjs.genSaltSync();
@@ -79,7 +79,7 @@ const usuariosPut = async (req, res = response) => {
     }
 
     // buscalo por el id y lo actualizo, ademas lo almacena en el la variable usuario
-    const usuario = await Usuario.findByIdAndUpdate(id, resto);
+    // const usuario = await Usuario.findByIdAndUpdate(id, resto);
 
 
     res.json({
